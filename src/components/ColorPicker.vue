@@ -1,5 +1,7 @@
 <template>
-  <div />
+  <div>
+    <div class="swatch" />
+  </div>
 </template>
 
 <script>

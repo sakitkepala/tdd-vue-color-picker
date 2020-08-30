@@ -19,10 +19,7 @@ describe('ColorPicker', () => {
       // Assert
       // * catatan: ambil semua DOM swatch yang sudah dimounting di dalam komponen color picker
       const domSwatchSemua = wrapper.findAll('.swatch');
-      // * catatan: di fase Merah, diharapkan punya DOM swatch yang sudah dimounting
-      // dan seharusnya gagal karena belum punya: komponennya belum punya template swatch
-      // yang mau dirender
-      expect(domSwatchSemua.length).toBeGreaterThan(0);
+      expect(domSwatchSemua.length).toBeGreaterThan(0); // lulus
 
       // dataProps.swatchSemua.forEach((swatch, index) => {
       //   // * catatan: assertnya diloop sebanyak jumlah swatch di props
