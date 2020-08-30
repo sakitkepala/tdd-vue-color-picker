@@ -1,7 +1,7 @@
 <template>
   <div class="color-picker">
     <ul class="swatch-semua">
-      <li class="swatch"
+      <li class="swatch active"
         :key="index"
         v-for="(swatch, index) in swatchSemua"
         :style="{ backgroundColor: `#${swatch}` }"

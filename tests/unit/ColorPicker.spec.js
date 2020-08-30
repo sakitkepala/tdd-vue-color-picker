@@ -31,8 +31,10 @@ describe('ColorPicker', () => {
 
     test('set swatch yang pertama jadi pilihan default', () => {
       const domSwatchPertama = wrapper.find('.swatch');
-      // * catatan: fase merah, gagal karena class active gak ada di komponen:
-      // belum implemen class active di komponen
+      // * catatan: fase HIJAU, dibuat lulus dengan nge-hardcoding class ke atribut DOM-nya
+      // * catatan: Specnya cukup sederhana karena yang dicek cuma keberadaan class di DOM template.
+      // Kekurangannya, dia gak tau apakah swatch lain juga dipilih atau enggak sehingga belum tentu
+      // yakin kalau swatch lain tidak dipilih
       expect(domSwatchPertama.classes()).toContain('active');
     });
 
