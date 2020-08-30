@@ -1,17 +1,28 @@
 <template>
   <div class="color-picker">
     <ul class="swatch-semua">
-      <li class="swatch" style="background-color: rgb(227, 52, 47)" />
-      <li class="swatch" style="background-color: rgb(52, 144, 220)" />
-      <li class="swatch" style="background-color: rgb(246, 153, 63)" />
-      <li class="swatch" style="background-color: rgb(56, 193, 114)" />
-      <li class="swatch" style="background-color: rgb(255, 255, 255)" />
+      <li class="swatch"
+        :key="index"
+        v-for="(swatch, index) in swatchSemua"
+        :style="{ backgroundColor: `#${swatch}` }"
+      ></li>
     </ul>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    // props Array kode warna yang diambil untuk kasih style warna di swatch
+    swatchSemua: {
+      type: Array,
+      // nilai default kalau gak dioperi Array kode warnanya
+      default () {
+        return [];
+      },
+    },
+  },
+}
 </script>
 
 <style>
