@@ -13,13 +13,9 @@
 <script>
 export default {
   props: {
-    // props Array kode warna yang diambil untuk kasih style warna di swatch
     swatchSemua: {
       type: Array,
-      // nilai default kalau gak dioperi Array kode warnanya
-      default () {
-        return [];
-      },
+      default: () => [],
     },
   },
 }
