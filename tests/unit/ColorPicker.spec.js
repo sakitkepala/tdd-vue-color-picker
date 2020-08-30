@@ -29,6 +29,13 @@ describe('ColorPicker', () => {
       });
     });
 
+    test('set swatch yang pertama jadi pilihan default', () => {
+      const domSwatchPertama = wrapper.find('.swatch');
+      // * catatan: fase merah, gagal karena class active gak ada di komponen:
+      // belum implemen class active di komponen
+      expect(domSwatchPertama.classes()).toContain('active');
+    });
+
   });
 
 });
