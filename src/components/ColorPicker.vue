@@ -5,7 +5,8 @@
         :key="index"
         v-for="(swatch, index) in swatchSemua"
         :style="{ backgroundColor: `#${swatch}` }"
-        :class="{ 'active': index === 0 }"
+        :class="{ active: index === swatchAktif }"
+        @click="swatchAktif = index"
       ></li>
     </ul>
   </div>
@@ -18,6 +19,11 @@ export default {
       type: Array,
       default: () => [],
     },
+  },
+  data: () => {
+    return {
+      swatchAktif: 0
+    };
   },
 }
 </script>

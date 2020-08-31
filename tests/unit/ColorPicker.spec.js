@@ -41,13 +41,16 @@ describe('ColorPicker', () => {
       expect(domSwatchActive.length).toBe(1); // lulus
     });
 
-    test('buat supaya swatch active waktu diklik', () => {
+    // Ngetes event handling perlu pakai async karena menurut
+    // dokumentasi `vue-test-utils`, fungsi `trigger()` ngereturn Promise
+    test('buat supaya swatch active waktu diklik', async () => {
       const domSwatchTarget = wrapper.findAll('.swatch').at(2);
 
-      domSwatchTarget.trigger('click');
+      await domSwatchTarget.trigger('click');
 
-      // * catatan: fase MERAH, klik masih belum berefek kasih class active ke swatch yang dipilih
-      expect(domSwatchTarget.classes()).toContain('active');
+      // * catatan: fase HIJAU, implemen event handler klik di swatch
+      // untuk pilih swatch
+      expect(domSwatchTarget.classes()).toContain('active'); // lulus
     });
 
   });
