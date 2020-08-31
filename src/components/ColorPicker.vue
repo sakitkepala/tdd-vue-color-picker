@@ -1,10 +1,11 @@
 <template>
   <div class="color-picker">
     <ul class="swatch-semua">
-      <li class="swatch active"
+      <li class="swatch"
         :key="index"
         v-for="(swatch, index) in swatchSemua"
         :style="{ backgroundColor: `#${swatch}` }"
+        :class="{ 'active': index === 0 }"
       ></li>
     </ul>
   </div>

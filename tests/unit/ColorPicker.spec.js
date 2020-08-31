@@ -34,15 +34,13 @@ describe('ColorPicker', () => {
       expect(domSwatchPertama.classes()).toContain('active'); // lulus
     });
 
-    // dibuat tes baru ini untuk memastikan ketika masih default
-    // swatch selain yang pertama tidak dipilih juga
     test('tidak set active swatch selain yang pertama ketika masih default', () => {
       const domSwatchActive = wrapper.findAll('.swatch').filter(
         wr => wr.classes('active')
       );
-      // * catatan: fase merah, masih gagal karena semua swatch di awal/default
-      // masih diset active terpilih semua
-      expect(domSwatchActive.length).toBe(1); // gagal
+      // * catatan: fase hijau, komponen sudah implemen logic di binding style
+      // supaya render class active hanya di swatch pertama saja ketika masih default
+      expect(domSwatchActive.length).toBe(1); // lulus
     });
 
   });
