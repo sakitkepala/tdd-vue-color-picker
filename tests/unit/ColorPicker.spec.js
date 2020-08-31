@@ -38,8 +38,9 @@ describe('ColorPicker', () => {
       const domSwatchActive = wrapper.findAll('.swatch').filter(
         wr => wr.classes('active')
       );
-      // * catatan: fase hijau, komponen sudah implemen logic di binding style
-      // supaya render class active hanya di swatch pertama saja ketika masih default
+      // * catatan: sejauh ini udah cukup bagus, belum perlu direfaktor meski masih hardcoded
+      // karena solusi yang sekarang masih sesuai dengan problem yang masih dihadapi
+      // yaitu nilai default untuk swatch yang dipilih di awal
       expect(domSwatchActive.length).toBe(1); // lulus
     });
 
