@@ -38,10 +38,16 @@ describe('ColorPicker', () => {
       const domSwatchActive = wrapper.findAll('.swatch').filter(
         wr => wr.classes('active')
       );
-      // * catatan: sejauh ini udah cukup bagus, belum perlu direfaktor meski masih hardcoded
-      // karena solusi yang sekarang masih sesuai dengan problem yang masih dihadapi
-      // yaitu nilai default untuk swatch yang dipilih di awal
       expect(domSwatchActive.length).toBe(1); // lulus
+    });
+
+    test('buat supaya swatch active waktu diklik', () => {
+      const domSwatchTarget = wrapper.findAll('.swatch').at(2);
+
+      domSwatchTarget.trigger('click');
+
+      // * catatan: fase MERAH, klik masih belum berefek kasih class active ke swatch yang dipilih
+      expect(domSwatchTarget.classes()).toContain('active');
     });
 
   });
