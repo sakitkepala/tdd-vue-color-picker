@@ -31,11 +31,18 @@ describe('ColorPicker', () => {
 
     test('set swatch yang pertama jadi pilihan default', () => {
       const domSwatchPertama = wrapper.find('.swatch');
-      // * catatan: fase HIJAU, dibuat lulus dengan nge-hardcoding class ke atribut DOM-nya
-      // * catatan: Specnya cukup sederhana karena yang dicek cuma keberadaan class di DOM template.
-      // Kekurangannya, dia gak tau apakah swatch lain juga dipilih atau enggak sehingga belum tentu
-      // yakin kalau swatch lain tidak dipilih
-      expect(domSwatchPertama.classes()).toContain('active');
+      expect(domSwatchPertama.classes()).toContain('active'); // lulus
+    });
+
+    // dibuat tes baru ini untuk memastikan ketika masih default
+    // swatch selain yang pertama tidak dipilih juga
+    test('tidak set active swatch selain yang pertama ketika masih default', () => {
+      const domSwatchActive = wrapper.findAll('.swatch').filter(
+        wr => wr.classes('active')
+      );
+      // * catatan: fase merah, masih gagal karena semua swatch di awal/default
+      // masih diset active terpilih semua
+      expect(domSwatchActive.length).toBe(1); // gagal
     });
 
   });
